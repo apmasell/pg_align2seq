@@ -1,0 +1,5 @@
+SET search_path = public;
+
+DROP FUNCTION align_n(text, text);
+DROP FUNCTION align_p(text, text);
+DROP FUNCTION n2p(text, int4);

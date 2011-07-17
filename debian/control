@@ -1,0 +1,15 @@
+Source: postgresql-align2seq
+Section: science
+Priority: extra
+Maintainer: Andre Masella <andre@masella.name>
+Build-Depends: postgresql-server-dev-8.4, debhelper (>= 7.0.50~)
+Standards-Version: 3.9.1
+Homepage: https://github.com/apmasell/pg_align2seq
+
+Package: postgresql-align2seq
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, postgresql-8.4
+Description: Sequence alignment functions for PostgresQL
+ Allows basic Smith-Waterman alignments to be done on sequence inside
+ the database and the score to be returned. For small datasets, this
+ can be a good way to rank items by biological similarity.

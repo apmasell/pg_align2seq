@@ -1,0 +1,36 @@
+/*
+ * align2seq
+ *
+ * Functions to perform sequence alignment directly in PostgreSQL
+ * Andre Masella <andre@masella.no-ip.org>
+ */
+
+Release Notes:
+  Version 0.1
+    - Initial release    
+
+Installation:
+  In this directory run:
+
+    make
+    make install
+
+  You can use align2seq.sql to create the functions in your database of choice, e.g.
+
+    psql template1 < align2seq.sql
+
+  installs align2seq functions into database template1
+
+Documentation:
+
+	FUNCTION align_n(text, text) RETURNS int4
+
+	Align two nucleotide sequences using the Smith-Waterman algorithm and return the alignment score. The score will always be non-negative.
+
+	FUNCTION align_p(text, text) RETURNS int4
+
+	Align two aminoacid sequences using the Smith-Waterman algorithm and return the alignment score. The score will always be non-negative.
+
+	FUNCTION n2p(text, int4) RETURNS text
+
+	Convert a nucleotide sequence to a protein sequence. The numeric parameter skips the first n nucleotides of the sequence, used for shifting the reading frame.
